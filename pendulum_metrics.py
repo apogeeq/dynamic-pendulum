@@ -75,9 +75,13 @@ time = np.linspace(0, simulation_time, num_steps)
 x1_array = np.zeros(num_steps)
 x2_array = np.zeros(num_steps)
 
+x2 = 0
+
 # Simulation loop (analytical)
 for i in range(num_steps):
-    t = i * dt
+    # Store current state
+    x1_array[i] = x1
+    x2_array[i] = x2
 
     # Calculate acceleration
     x2_dot = -(g / l) * np.sin(x1) - (d / (m * l ** 2)) * x2
@@ -86,9 +90,7 @@ for i in range(num_steps):
     x2 += x2_dot * dt
     x1 += x2 * dt
 
-    # Store current state
-    x1_array[i] = x1
-    x2_array[i] = x2
+    
 
 # Calculate metrics
 angle_array = np.array(angle_list)
@@ -122,3 +124,4 @@ plt.show()
 
 print(f"L_2: {L_2:.4f}")
 print(f"L_inf: {L_inf:.4f}")
+
