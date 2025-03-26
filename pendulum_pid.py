@@ -14,7 +14,7 @@ g = 10  # gravity
 # Control parameters
 Kp = 10  # Proportional gain
 Kd = 5   # Differential gain
-Ki = 8   # Integral gain (подберите значение экспериментально)
+Ki = 8   # Integral gain 
 target_position = -1  # Desired position for the joint
 
 # Connect to PyBullet
